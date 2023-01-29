@@ -6,10 +6,7 @@ const cors = require("cors");
 
 //connect the mongoose, <password> => password in mongoDB
 mongoose
-  .connect(
-    "mongodb+srv://orrfarber:morag123@cluster0.xcslswx.mongodb.net/?retryWrites=true&w=majority",
-    {}
-  )
+  .connect(process.env.MONGO_URL, {})
   .then(() => console.log("connected successfully"))
   .catch((error) => {
     console.log("connection to database unsuccessfully");
